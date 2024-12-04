@@ -2,13 +2,17 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import urllib.parse
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Configurações individuais da conexão
-DB_USER = "root"
-DB_PASSWORD = "Test@123"
-DB_HOST = "localhost"
-DB_PORT = "3306"
-DB_NAME = "deepblue"
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+DB_NAME = os.getenv("DB_NAME")
 
 # Codifica a senha para evitar problemas com caracteres especiais
 encoded_password = urllib.parse.quote_plus(DB_PASSWORD)

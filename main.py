@@ -1,4 +1,7 @@
 import os
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+
+import os
 from fastapi import FastAPI, File, UploadFile, HTTPException, Depends, status
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session

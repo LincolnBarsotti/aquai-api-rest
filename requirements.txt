@@ -1,0 +1,14 @@
+# Dependências para Modelos de Machine Learning
+tensorflow>=2.10.0
+matplotlib>=3.5.0
+pillow>=9.0.0
+scipy>=1.7.0
+
+# Dependências para API
+fastapi>=0.88.0
+uvicorn[standard]>=0.20.0
+sqlalchemy>=1.4.0
+mysql-connector-python>=8.0.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.5
+python-dotenv>=0.21.0
