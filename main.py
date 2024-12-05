@@ -14,9 +14,19 @@ import models
 from database import SessionLocal, engine
 from dto import CadastroRequest, LoginRequest
 from PIL import Image
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configuração do FastAPI
 app = FastAPI()
+
+# Configuração do CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permite requisições de todas as origens (modifique conforme necessário)
+    allow_credentials=True,  # Permite envio de cookies e headers de autenticação
+    allow_methods=["*"],  # Permite todos os métodos HTTP (GET, POST, etc.)
+    allow_headers=["*"],  # Permite todos os headers
+)
 
 # Configuração do Hashing de Senhas
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
